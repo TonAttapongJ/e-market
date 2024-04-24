@@ -11,11 +11,18 @@ import Combine
 class CartViewModel: ObservableObject {
   @Published private(set) var viewState: ViewState = .start
   @Published private(set) var productModels: [ProductModel] = []
-  let readCartUseCase: ReadCartUseCase
+  @Published var isUpdating: Bool = false
+  
+  private let readCartUseCase: ReadCartUseCase
+  private let updateCartUseCase: UpdateCartUseCase
   private var anyCancellable = Set<AnyCancellable>()
 
-  init(readCartUseCase: ReadCartUseCase = ReadCartUseCaseImpl()) {
+  init(
+    readCartUseCase: ReadCartUseCase = ReadCartUseCaseImpl(),
+    updateCartUseCase: UpdateCartUseCase = UpdateCartUseCaseImpl()
+  ) {
     self.readCartUseCase = readCartUseCase
+    self.updateCartUseCase = updateCartUseCase
     getProductsOnCart()
   }
   
@@ -26,16 +33,24 @@ class CartViewModel: ObservableObject {
       .subscribe(on: DispatchQueue.global(qos: .background))
       .receive(on: DispatchQueue.main)
       .sink { completion in
-        print("completion")
       } receiveValue: { products in
-        for product in products {
-          print("Product name: \(product.name)")
-          print("Product quantity: \(product.quantity)")
-        }
         self.productModels = products
-        print("productModels count: \(self.productModels.count)")
         self.viewState = products.count > 0 ? .success : .failed
       }.store(in: &anyCancellable)
-
+  }
+  
+  func updateProduct(product: ProductModel, quantity: Int) {
+    self.isUpdating = true
+    updateCartUseCase
+      .execute(product: product, quantity: quantity)
+      .subscribe(on: DispatchQueue.global(qos: .background))
+      .receive(on: DispatchQueue.main)
+      .sink { completion in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+          self.isUpdating = false
+          self.getProductsOnCart()
+        }
+      } receiveValue: { _ in }
+      .store(in: &anyCancellable)
   }
 }

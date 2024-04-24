@@ -12,23 +12,39 @@ class HomeViewModel: ObservableObject {
   // MARK: - UseCase
   private let getStoreUseCase: GetStoreUseCase
   private let getProductUseCase: GetProductUseCase
+  private let readCartUseCase: ReadCartUseCase
 
   // MARK: - Publisher
   @Published private(set) var viewState: ViewState = .start
   @Published private(set) var storeModel: StoreModel?
   @Published private(set) var productModels: [ProductModel] = []
   @Published private(set) var errorMessage: String = ""
+  @Published private(set) var badge: Int? = nil
   
   private var selectedProduct: ProductModel?
   private var anyCancellable = Set<AnyCancellable>()
 
   init(
     getStoreUseCase: GetStoreUseCase = GetStoreUseCaseImpl(),
-    getProductUseCase: GetProductUseCase = GetProductUseCaseImpl()
+    getProductUseCase: GetProductUseCase = GetProductUseCaseImpl(),
+    readCartUseCase: ReadCartUseCase = ReadCartUseCaseImpl()
   ) {
     self.getStoreUseCase = getStoreUseCase
     self.getProductUseCase = getProductUseCase
+    self.readCartUseCase = readCartUseCase
     self.getStoreInformation()
+  }
+  
+  func readCart() {
+    self.readCartUseCase
+      .execute()
+      .subscribe(on: DispatchQueue.global(qos: .background))
+      .receive(on: DispatchQueue.main)
+      .sink { completion in
+      } receiveValue: { products in
+        let totalQuantity = products.reduce(0) { $0 + $1.quantity }
+        self.badge = totalQuantity
+      }.store(in: &anyCancellable)
   }
   
   private func getStoreInformation() {

@@ -49,11 +49,10 @@ struct HomeView: View {
             } label: {
               ZStack {
                 //TODO: Implement Badge
-                var badgeCount: Int? = 4
                 Image(systemName: "cart")
                   .foregroundColor(.black)
-                  .padding(.bottom, 4)
-                if let badgeCount = badgeCount, badgeCount > 0 {
+                  .padding(.bottom, 2)
+                if let badgeCount = viewModel.badge, badgeCount > 0 {
                   Text("\(badgeCount)")
                     .foregroundColor(.white)
                     .font(.caption)
@@ -119,8 +118,16 @@ struct HomeView: View {
       }
     }
     .sheet(isPresented: $isAddToCartViewPresented) {
-      AddToCartView(viewModel: viewModel.makeAddToCartViewModel())
+      AddToCartView(viewModel: viewModel.makeAddToCartViewModel(), isAddToCartViewPresented: $isAddToCartViewPresented)
         .presentationDetents([.height(200)])
+    }
+    .onChange(of: isAddToCartViewPresented) { oldValue, newValue in
+      if !newValue {
+        viewModel.readCart()
+      }
+    }
+    .onAppear {
+      self.viewModel.readCart()
     }
   }
 }

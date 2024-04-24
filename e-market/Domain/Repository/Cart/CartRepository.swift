@@ -11,4 +11,6 @@ import Combine
 protocol CartRepository {
   func create(product: ProductModel, quantity: Int) -> AnyPublisher<Void, Error>
   func read() -> AnyPublisher<[ProductModel], Error>
+  func update(product: ProductModel, quantity: Int) -> AnyPublisher<Void, Error>
+  func delete(product: ProductModel) -> AnyPublisher<Void, Error>
 }

@@ -9,10 +9,13 @@ import SwiftUI
 
 struct AddToCartView: View {
   @StateObject var viewModel: AddToCartViewModel
+  @Binding var isAddToCartViewPresented: Bool
+  
   let disableColor = Color(red: 0.8, green: 0.8, blue: 0.8)
   
-  public init(viewModel: AddToCartViewModel) {
+  public init(viewModel: AddToCartViewModel, isAddToCartViewPresented: Binding<Bool>) {
     _viewModel = StateObject(wrappedValue: viewModel)
+    _isAddToCartViewPresented = isAddToCartViewPresented
   }
   
   var body: some View {
@@ -61,26 +64,38 @@ struct AddToCartView: View {
           RoundedRectangle(cornerRadius: 10)
             .stroke(Color.black, lineWidth: 2)
         )
-
+        
       }
       
       Button(action: {
         viewModel.addToCart()
       }) {
-          Text("Add to cart")
-              .font(.headline)
-              .foregroundColor(.white)
+        Text("Add to cart")
+          .font(.headline)
+          .foregroundColor(.white)
+          .frame(maxWidth: .infinity)
       }
-      .frame(maxWidth: .infinity)
       .padding()
       .background(Color.black)
       .cornerRadius(10)
       
     }
     .padding(.all, 16)
+    .alert(isPresented: $viewModel.addToCartSuccess) {
+      Alert(
+        title: Text("Success"),
+        message: Text("Product added successfully"),
+        dismissButton: .default(
+          Text("OK"),
+          action: {
+            isAddToCartViewPresented = false
+          }
+        )
+      )
+    }
   }
 }
 
 #Preview {
-  AddToCartView(viewModel: AddToCartViewModel(productModel: ProductModel(name: "a", price: 12, imageUrl: "")))
+  AddToCartView(viewModel: AddToCartViewModel(productModel: ProductModel(name: "a", price: 12, imageUrl: "")), isAddToCartViewPresented: .constant(false))
 }

@@ -48,6 +48,7 @@
 		E67056472BD90296000C1645 /* ReadCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056462BD90296000C1645 /* ReadCartUseCase.swift */; };
 		E67056532BD91DFD000C1645 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056522BD91DFD000C1645 /* SQLiteDatabase.swift */; };
 		E67056552BD91E09000C1645 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056542BD91E09000C1645 /* SQLiteCommands.swift */; };
+		E67056572BD93F5E000C1645 /* UpdateCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056562BD93F5E000C1645 /* UpdateCartUseCase.swift */; };
 		E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */; };
 		E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */; };
 		E6FDEDE12BD7BBE400D8CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		E67056462BD90296000C1645 /* ReadCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCartUseCase.swift; sourceTree = "<group>"; };
 		E67056522BD91DFD000C1645 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		E67056542BD91E09000C1645 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
+		E67056562BD93F5E000C1645 /* UpdateCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCartUseCase.swift; sourceTree = "<group>"; };
 		E6FDEDD92BD7BBE200D8CCEE /* e-market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_marketApp.swift; sourceTree = "<group>"; };
 		E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				E670563D2BD8FCF8000C1645 /* CreateCartUseCase.swift */,
 				E67056462BD90296000C1645 /* ReadCartUseCase.swift */,
+				E67056562BD93F5E000C1645 /* UpdateCartUseCase.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				E67056532BD91DFD000C1645 /* SQLiteDatabase.swift in Sources */,
 				E67056472BD90296000C1645 /* ReadCartUseCase.swift in Sources */,
 				E67055D12BD8B7DE000C1645 /* HomeViewModel.swift in Sources */,
+				E67056572BD93F5E000C1645 /* UpdateCartUseCase.swift in Sources */,
 				E67056122BD8C670000C1645 /* ProductRepository.swift in Sources */,
 				E670562E2BD8EB1E000C1645 /* AddToCartView.swift in Sources */,
 				E67056392BD8FA4F000C1645 /* CartRepository.swift in Sources */,

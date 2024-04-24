@@ -111,17 +111,19 @@ class SQLiteCommands {
   }
   
   // Delete Row
-  static func deleteRow(productId: Int) {
+  static func deleteRow(productId: Int) -> Bool? {
     guard let database = SQLiteDatabase.sharedInstance.database else {
       print("Datastore connection error")
-      return
+      return nil
     }
     
     do {
       let contact = table.filter(id == productId).limit(1)
       try database.run(contact.delete())
+      return true
     } catch {
       print("Delete row error: \(error)")
+      return false
     }
   }
 }
