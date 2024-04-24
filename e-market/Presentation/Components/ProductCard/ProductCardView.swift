@@ -41,7 +41,7 @@ struct ProductCardView: View {
         Button(action: {
           didTapAddProductToCard?(viewModel.displayViewModel)
         }) {
-            Text("Add to card")
+            Text("Add to cart")
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()

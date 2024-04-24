@@ -18,7 +18,8 @@ class HomeViewModel: ObservableObject {
   @Published private(set) var storeModel: StoreModel?
   @Published private(set) var productModels: [ProductModel] = []
   @Published private(set) var errorMessage: String = ""
-
+  
+  private var selectedProduct: ProductModel?
   private var anyCancellable = Set<AnyCancellable>()
 
   init(
@@ -56,6 +57,10 @@ class HomeViewModel: ObservableObject {
       })
       .store(in: &anyCancellable)
   }
+  
+  func setSelectedProduct(product: ProductModel) {
+    selectedProduct = product
+  }
 }
 
 //MARK: - Make ViewModel
@@ -66,5 +71,10 @@ extension HomeViewModel {
         name: product.name,
         price: "\(product.price)",
         imageUrl: product.imageUrl))
+  }
+  
+  func makeAddToCartViewModel() -> AddToCartViewModel {
+    guard let selectedProduct = self.selectedProduct else { return AddToCartViewModel(productModel: ProductModel(name: "", price: 0, imageUrl: "")) }
+    return AddToCartViewModel(productModel: selectedProduct)
   }
 }

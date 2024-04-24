@@ -8,13 +8,17 @@
 import Foundation
 
 struct ProductModel {
+  let id: Int
   let name: String
   let price: Double
   let imageUrl: String
+  var quantity: Int
   
-  init(name: String, price: Double, imageUrl: String) {
+  init(id: Int = UUID().hashValue, name: String, price: Double, imageUrl: String, quantity: Int = 0) {
+    self.id = id
     self.name = name
     self.price = price
     self.imageUrl = imageUrl
+    self.quantity = quantity
   }
 }

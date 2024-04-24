@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
   @StateObject var viewModel: HomeViewModel
   @EnvironmentObject var router: Router
-  
+  @State private var isAddToCartViewPresented = false
+
   let columns = [
     GridItem(.flexible()),
     GridItem(.flexible()),
@@ -43,6 +45,7 @@ struct HomeView: View {
             
             Button {
               //TODO: Implement Go to Cart
+              router.navigate(to: .cartView(viewModel: CartViewModel()))
             } label: {
               ZStack {
                 //TODO: Implement Badge
@@ -101,8 +104,9 @@ struct HomeView: View {
           
           LazyVGrid(columns: columns, spacing: 20) {
             ForEach(viewModel.productModels, id: \.name) { item in
-              ProductCardView(viewModel: viewModel.makeProductCardViewModel(product: item), didTapAddProductToCard: { movie in
-                //TODO: Implement Present Add To Card Bottom Sheet
+              ProductCardView(viewModel: viewModel.makeProductCardViewModel(product: item), didTapAddProductToCard: { selectedProduct in
+                viewModel.setSelectedProduct(product: ProductModel(name: selectedProduct.name, price: Double(selectedProduct.price) ?? 0, imageUrl: selectedProduct.imageUrl))
+                isAddToCartViewPresented = true
               })
             }
           }
@@ -113,6 +117,10 @@ struct HomeView: View {
         Text(viewModel.errorMessage)
         Spacer()
       }
+    }
+    .sheet(isPresented: $isAddToCartViewPresented) {
+      AddToCartView(viewModel: viewModel.makeAddToCartViewModel())
+        .presentationDetents([.height(200)])
     }
   }
 }

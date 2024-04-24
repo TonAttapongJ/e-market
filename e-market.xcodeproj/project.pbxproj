@@ -37,6 +37,17 @@
 		E67056262BD8CC1E000C1645 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056252BD8CC1E000C1645 /* ProductCardView.swift */; };
 		E67056282BD8CC36000C1645 /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056272BD8CC35000C1645 /* ProductCardViewModel.swift */; };
 		E670562B2BD8CD1C000C1645 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E670562A2BD8CD1C000C1645 /* SDWebImageSwiftUI */; };
+		E670562E2BD8EB1E000C1645 /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670562D2BD8EB1E000C1645 /* AddToCartView.swift */; };
+		E67056302BD8EC20000C1645 /* AddToCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670562F2BD8EC20000C1645 /* AddToCartViewModel.swift */; };
+		E67056362BD8F6D3000C1645 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E67056352BD8F6D3000C1645 /* SQLite */; };
+		E67056392BD8FA4F000C1645 /* CartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056382BD8FA4F000C1645 /* CartRepository.swift */; };
+		E670563C2BD8FAC5000C1645 /* CartRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670563B2BD8FAC5000C1645 /* CartRepositoryImpl.swift */; };
+		E670563E2BD8FCF8000C1645 /* CreateCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670563D2BD8FCF8000C1645 /* CreateCartUseCase.swift */; };
+		E67056412BD900D8000C1645 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056402BD900D8000C1645 /* CartView.swift */; };
+		E67056442BD900E7000C1645 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056432BD900E7000C1645 /* CartViewModel.swift */; };
+		E67056472BD90296000C1645 /* ReadCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056462BD90296000C1645 /* ReadCartUseCase.swift */; };
+		E67056532BD91DFD000C1645 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056522BD91DFD000C1645 /* SQLiteDatabase.swift */; };
+		E67056552BD91E09000C1645 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67056542BD91E09000C1645 /* SQLiteCommands.swift */; };
 		E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */; };
 		E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */; };
 		E6FDEDE12BD7BBE400D8CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */; };
@@ -89,6 +100,16 @@
 		E67056212BD8CAD6000C1645 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E67056252BD8CC1E000C1645 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		E67056272BD8CC35000C1645 /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
+		E670562D2BD8EB1E000C1645 /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
+		E670562F2BD8EC20000C1645 /* AddToCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewModel.swift; sourceTree = "<group>"; };
+		E67056382BD8FA4F000C1645 /* CartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepository.swift; sourceTree = "<group>"; };
+		E670563B2BD8FAC5000C1645 /* CartRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepositoryImpl.swift; sourceTree = "<group>"; };
+		E670563D2BD8FCF8000C1645 /* CreateCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCartUseCase.swift; sourceTree = "<group>"; };
+		E67056402BD900D8000C1645 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		E67056432BD900E7000C1645 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		E67056462BD90296000C1645 /* ReadCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCartUseCase.swift; sourceTree = "<group>"; };
+		E67056522BD91DFD000C1645 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		E67056542BD91E09000C1645 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
 		E6FDEDD92BD7BBE200D8CCEE /* e-market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_marketApp.swift; sourceTree = "<group>"; };
 		E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E67056362BD8F6D3000C1645 /* SQLite in Frameworks */,
 				E670562B2BD8CD1C000C1645 /* SDWebImageSwiftUI in Frameworks */,
 				E67055FC2BD8BE51000C1645 /* Moya in Frameworks */,
 				E67055FA2BD8BE51000C1645 /* CombineMoya in Frameworks */,
@@ -173,6 +195,8 @@
 		E67055CC2BD8B79E000C1645 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E670563F2BD900CE000C1645 /* Cart */,
+				E670562C2BD8EB10000C1645 /* AddToCart */,
 				E67055CD2BD8B7C2000C1645 /* Home */,
 			);
 			path = Features;
@@ -224,6 +248,8 @@
 		E67055D62BD8B860000C1645 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				E670563D2BD8FCF8000C1645 /* CreateCartUseCase.swift */,
+				E67056462BD90296000C1645 /* ReadCartUseCase.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -257,6 +283,7 @@
 		E67055DE2BD8B9DA000C1645 /* RepositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
+				E670563A2BD8FAB7000C1645 /* Cart */,
 				E67056182BD8C71E000C1645 /* Product */,
 				E67055E92BD8BBAD000C1645 /* Store */,
 			);
@@ -266,6 +293,7 @@
 		E67055E22BD8BA4F000C1645 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E67056372BD8FA45000C1645 /* Cart */,
 				E67056102BD8C662000C1645 /* Product */,
 				E67055E32BD8BA63000C1645 /* Store */,
 			);
@@ -300,6 +328,8 @@
 		E67055EC2BD8BBCF000C1645 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				E67056522BD91DFD000C1645 /* SQLiteDatabase.swift */,
+				E67056542BD91E09000C1645 /* SQLiteCommands.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -416,6 +446,40 @@
 			path = ProductCard;
 			sourceTree = "<group>";
 		};
+		E670562C2BD8EB10000C1645 /* AddToCart */ = {
+			isa = PBXGroup;
+			children = (
+				E670562D2BD8EB1E000C1645 /* AddToCartView.swift */,
+				E670562F2BD8EC20000C1645 /* AddToCartViewModel.swift */,
+			);
+			path = AddToCart;
+			sourceTree = "<group>";
+		};
+		E67056372BD8FA45000C1645 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E67056382BD8FA4F000C1645 /* CartRepository.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		E670563A2BD8FAB7000C1645 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E670563B2BD8FAC5000C1645 /* CartRepositoryImpl.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		E670563F2BD900CE000C1645 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E67056402BD900D8000C1645 /* CartView.swift */,
+				E67056432BD900E7000C1645 /* CartViewModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
 		E6FDEDD02BD7BBE200D8CCEE = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +562,7 @@
 				E67055FD2BD8BE51000C1645 /* ReactiveMoya */,
 				E67055FF2BD8BE51000C1645 /* RxMoya */,
 				E670562A2BD8CD1C000C1645 /* SDWebImageSwiftUI */,
+				E67056352BD8F6D3000C1645 /* SQLite */,
 			);
 			productName = "e-market";
 			productReference = E6FDEDD92BD7BBE200D8CCEE /* e-market.app */;
@@ -574,6 +639,7 @@
 			packageReferences = (
 				E67055F82BD8BE51000C1645 /* XCRemoteSwiftPackageReference "Moya" */,
 				E67056292BD8CD1C000C1645 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				E67056342BD8F6D3000C1645 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = E6FDEDDA2BD7BBE200D8CCEE /* Products */;
 			projectDirPath = "";
@@ -617,9 +683,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E670563C2BD8FAC5000C1645 /* CartRepositoryImpl.swift in Sources */,
 				E670560F2BD8C2F0000C1645 /* LinkedList.swift in Sources */,
 				E67055CF2BD8B7CF000C1645 /* HomeView.swift in Sources */,
 				E67056052BD8C014000C1645 /* NetworkError.swift in Sources */,
+				E67056552BD91E09000C1645 /* SQLiteCommands.swift in Sources */,
 				E67056072BD8C1FB000C1645 /* ViewState.swift in Sources */,
 				E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */,
 				E67055F02BD8BCA1000C1645 /* NetworkManager.swift in Sources */,
@@ -628,18 +696,26 @@
 				E67056032BD8BE82000C1645 /* CoreConstants.swift in Sources */,
 				E67055E82BD8BB38000C1645 /* StoreResponse.swift in Sources */,
 				E670560B2BD8C2E0000C1645 /* Router.swift in Sources */,
+				E67056302BD8EC20000C1645 /* AddToCartViewModel.swift in Sources */,
+				E670563E2BD8FCF8000C1645 /* CreateCartUseCase.swift in Sources */,
 				E670561A2BD8C72A000C1645 /* ProductRepositoryImpl.swift in Sources */,
+				E67056442BD900E7000C1645 /* CartViewModel.swift in Sources */,
 				E67055D82BD8B899000C1645 /* GetStoreUseCase.swift in Sources */,
 				E67055EB2BD8BBBB000C1645 /* StoreRepositoryImpl.swift in Sources */,
 				E67056282BD8CC36000C1645 /* ProductCardViewModel.swift in Sources */,
 				E67056222BD8CAD6000C1645 /* DateFormatter.swift in Sources */,
+				E67056412BD900D8000C1645 /* CartView.swift in Sources */,
 				E670561F2BD8C775000C1645 /* ProductAPI.swift in Sources */,
 				E67056142BD8C67C000C1645 /* GetProductUseCase.swift in Sources */,
 				E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */,
 				E67055F72BD8BDC9000C1645 /* StoreAPI.swift in Sources */,
 				E67055E52BD8BA79000C1645 /* StoreRepository.swift in Sources */,
+				E67056532BD91DFD000C1645 /* SQLiteDatabase.swift in Sources */,
+				E67056472BD90296000C1645 /* ReadCartUseCase.swift in Sources */,
 				E67055D12BD8B7DE000C1645 /* HomeViewModel.swift in Sources */,
 				E67056122BD8C670000C1645 /* ProductRepository.swift in Sources */,
+				E670562E2BD8EB1E000C1645 /* AddToCartView.swift in Sources */,
+				E67056392BD8FA4F000C1645 /* CartRepository.swift in Sources */,
 				E670561C2BD8C749000C1645 /* ProductResponse.swift in Sources */,
 				E67056172BD8C6D3000C1645 /* ProductModel.swift in Sources */,
 				E67056262BD8CC1E000C1645 /* ProductCardView.swift in Sources */,
@@ -985,6 +1061,14 @@
 				minimumVersion = 3.0.2;
 			};
 		};
+		E67056342BD8F6D3000C1645 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1012,6 +1096,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E67056292BD8CD1C000C1645 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		E67056352BD8F6D3000C1645 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E67056342BD8F6D3000C1645 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
