@@ -36,7 +36,6 @@ class SQLiteCommands {
     }
   }
   
-  // Inserting Row
   static func insertRow(_ productValues: ProductModel) -> Bool? {
     guard let database = SQLiteDatabase.sharedInstance.database else {
       print("Datastore connection error")
@@ -51,20 +50,16 @@ class SQLiteCommands {
     }
   }
   
-  // Updating Row
   static func updateRow(_ productValues: ProductModel) -> Bool? {
     guard let database = SQLiteDatabase.sharedInstance.database else {
       print("Datastore connection error")
       return nil
     }
     
-    // Extracts the appropriate contact from the table according to the id
     let contact = table.filter(id == productValues.id).limit(1)
     
     do {
-      // Update the contact's values
       if try database.run(contact.update(name <- productValues.name, price <- productValues.price, quantity <- productValues.quantity, imageUrl <- productValues.imageUrl)) > 0 {
-        print("Updated contact")
         return true
       } else {
         print("Could not update contact: contact not found")
@@ -82,10 +77,8 @@ class SQLiteCommands {
       return nil
     }
     
-    // Contact Array
     var productArray = [ProductModel]()
     
-    // Sorting data in descending order by ID
     table = table.order(id.desc)
     
     do {
@@ -97,10 +90,8 @@ class SQLiteCommands {
         let quantityValue = product[quantity]
         let imageUrlValue = product[imageUrl]
         
-        // Create object
         let productObject = ProductModel(id: idValue, name: nameValue, price: priceValue, imageUrl: imageUrlValue, quantity: quantityValue)
         
-        // Add object to an array
         productArray.append(productObject)
       }
     } catch {
@@ -110,7 +101,6 @@ class SQLiteCommands {
     return productArray
   }
   
-  // Delete Row
   static func deleteRow(productId: Int) -> Bool? {
     guard let database = SQLiteDatabase.sharedInstance.database else {
       print("Datastore connection error")

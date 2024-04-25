@@ -10,6 +10,7 @@ import SwiftUI
 enum RouterDestination {
   case home(viewModel: HomeViewModel)
   case cartView(viewModel: CartViewModel)
+  case orderSummaryView(viewModel: OrderSummaryViewModel)
 }
 
 extension RouterDestination: Equatable {
@@ -17,6 +18,7 @@ extension RouterDestination: Equatable {
     switch (lhs, rhs) {
     case (.home, .home): return true
     case (.cartView, .cartView): return true
+    case (.orderSummaryView, .orderSummaryView): return true
     default: return false
     }
   }
@@ -27,6 +29,7 @@ extension RouterDestination: Hashable {
     switch self {
     case .home: hasher.combine(0)
     case .cartView: hasher.combine(1)
+    case .orderSummaryView: hasher.combine(2)
     }
   }
 }
@@ -45,6 +48,8 @@ class RouterFactoryView: RouterFactory {
       HomeView(viewModel: viewModel)
     case .cartView(let viewModel):
       CartView(viewModel: viewModel)
+    case .orderSummaryView(let viewModel):
+      OrderSummaryView(viewModel: viewModel)
     }
   }
 }

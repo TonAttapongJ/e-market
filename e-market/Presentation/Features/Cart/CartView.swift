@@ -131,7 +131,33 @@ struct CartView: View {
           }
         }
         .navigationTitle("Cart")
-      }
+        
+        if !viewModel.productModels.isEmpty {
+          VStack {
+            Spacer()
+            HStack {
+              Text("Total Price: ")
+              Spacer()
+              Text("\(viewModel.productModels.reduce(0) { $0 + ($1.price * Double($1.quantity)) }, specifier: "%.2f")")
+            }
+            
+            Button(action: {
+              router.navigate(to: .orderSummaryView(viewModel: OrderSummaryViewModel(productModels: viewModel.productModels)))
+            }) {
+              Text("Place Order")
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+            }
+            .padding()
+            .background(Color.black)
+            .cornerRadius(10)
+          }
+          .frame(minWidth: 0, maxWidth: .infinity, alignment: .bottom)
+          .padding()
+        }
+
+        }
     }
   }
 }
