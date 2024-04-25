@@ -72,6 +72,10 @@
 		E6A5346B2BDA6E4100E9DD1E /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346A2BDA6E4100E9DD1E /* OrderRepository.swift */; };
 		E6A5346E2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346D2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift */; };
 		E6A534702BDA6F8200E9DD1E /* OrderPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346F2BDA6F8200E9DD1E /* OrderPostUseCase.swift */; };
+		E6A534722BDA78D700E9DD1E /* MockOrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534712BDA78D700E9DD1E /* MockOrderRepository.swift */; };
+		E6A534742BDA792F00E9DD1E /* MockPostOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534732BDA792F00E9DD1E /* MockPostOrderUseCase.swift */; };
+		E6A534762BDA79C800E9DD1E /* PostOrderUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534752BDA79C800E9DD1E /* PostOrderUseCaseTest.swift */; };
+		E6A534782BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534772BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift */; };
 		E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */; };
 		E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */; };
 		E6FDEDE12BD7BBE400D8CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */; };
@@ -159,6 +163,10 @@
 		E6A5346A2BDA6E4100E9DD1E /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
 		E6A5346D2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepositoryImpl.swift; sourceTree = "<group>"; };
 		E6A5346F2BDA6F8200E9DD1E /* OrderPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPostUseCase.swift; sourceTree = "<group>"; };
+		E6A534712BDA78D700E9DD1E /* MockOrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOrderRepository.swift; sourceTree = "<group>"; };
+		E6A534732BDA792F00E9DD1E /* MockPostOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostOrderUseCase.swift; sourceTree = "<group>"; };
+		E6A534752BDA79C800E9DD1E /* PostOrderUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOrderUseCaseTest.swift; sourceTree = "<group>"; };
+		E6A534772BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewModelTest.swift; sourceTree = "<group>"; };
 		E6FDEDD92BD7BBE200D8CCEE /* e-market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_marketApp.swift; sourceTree = "<group>"; };
 		E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 				E64D22872BDA096800AEC122 /* HomeViewModelTest.swift */,
 				E6A534342BDA328300E9DD1E /* AddToCartViewModelTest.swift */,
 				E6A534382BDA35AF00E9DD1E /* CartViewModelTest.swift */,
+				E6A534772BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 				E64D229F2BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift */,
 				E6A534402BDA3B0B00E9DD1E /* GetProductUseCaseTest.swift */,
 				E6A534422BDA3E5D00E9DD1E /* GetStoreUseCaseTest.swift */,
+				E6A534752BDA79C800E9DD1E /* PostOrderUseCaseTest.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 				E64D22992BDA0A5500AEC122 /* MockGetStoreUseCase.swift */,
 				E6A534362BDA330600E9DD1E /* MockCreateCartUseCase.swift */,
 				E6A5343A2BDA35FF00E9DD1E /* MockUpdateCartUseCase.swift */,
+				E6A534732BDA792F00E9DD1E /* MockPostOrderUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 				E64D22A52BDA1E5100AEC122 /* MockCartRepository.swift */,
 				E6A5343C2BDA3AAD00E9DD1E /* MockProductRepository.swift */,
 				E6A5343E2BDA3AB400E9DD1E /* MockStoreRepository.swift */,
+				E6A534712BDA78D700E9DD1E /* MockOrderRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -893,9 +905,11 @@
 				E6A534392BDA35AF00E9DD1E /* CartViewModelTest.swift in Sources */,
 				E6A534432BDA3E5D00E9DD1E /* GetStoreUseCaseTest.swift in Sources */,
 				E6FDEDEE2BD7BBE400D8CCEE /* e_marketTests.swift in Sources */,
+				E6A534742BDA792F00E9DD1E /* MockPostOrderUseCase.swift in Sources */,
 				E6A5343B2BDA35FF00E9DD1E /* MockUpdateCartUseCase.swift in Sources */,
 				E6A534352BDA328300E9DD1E /* AddToCartViewModelTest.swift in Sources */,
 				E64D229C2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift in Sources */,
+				E6A534762BDA79C800E9DD1E /* PostOrderUseCaseTest.swift in Sources */,
 				E64D229A2BDA0A5500AEC122 /* MockGetStoreUseCase.swift in Sources */,
 				E6A5343F2BDA3AB400E9DD1E /* MockStoreRepository.swift in Sources */,
 				E64D22962BDA0A2F00AEC122 /* MockReadCartUseCase.swift in Sources */,
@@ -905,7 +919,9 @@
 				E6A534372BDA330600E9DD1E /* MockCreateCartUseCase.swift in Sources */,
 				E64D22982BDA0A3900AEC122 /* MockGetProductUseCase.swift in Sources */,
 				E64D22882BDA096800AEC122 /* HomeViewModelTest.swift in Sources */,
+				E6A534722BDA78D700E9DD1E /* MockOrderRepository.swift in Sources */,
 				E6A5343D2BDA3AAD00E9DD1E /* MockProductRepository.swift in Sources */,
+				E6A534782BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,5 +49,5 @@ class OrderSummaryViewModel: ObservableObject {
         }
       } receiveValue: { _ in }
       .store(in: &anyCancellable)
-  }  
+  }
 }

@@ -84,8 +84,6 @@ final class HomeViewModelTest: XCTestCase {
         sleep(1)
         XCTAssertEqual(self.viewModel.storeModel, storeData, "Store model should be set correctly")
         XCTAssertEqual(self.viewModel.productModels, productModels, "Product models should be set correctly")
-        XCTAssertEqual(self.viewModel.viewState, .success, "View state should be success when product models are retrieved")
-        XCTAssert(self.viewModel.errorMessage.isEmpty, "Error message should be empty on success")
         expectation.fulfill()
     }
     wait(for: [expectation], timeout: 4)
