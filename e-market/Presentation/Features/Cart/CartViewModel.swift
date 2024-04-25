@@ -12,7 +12,9 @@ class CartViewModel: ObservableObject {
   @Published private(set) var viewState: ViewState = .start
   @Published private(set) var productModels: [ProductModel] = []
   @Published var isUpdating: Bool = false
-  
+  @Published var errorMessage: String = ""
+  @Published var isShowError: Bool = false
+
   private let readCartUseCase: ReadCartUseCase
   private let updateCartUseCase: UpdateCartUseCase
   private var anyCancellable = Set<AnyCancellable>()
@@ -46,9 +48,17 @@ class CartViewModel: ObservableObject {
       .subscribe(on: DispatchQueue.global(qos: .background))
       .receive(on: DispatchQueue.main)
       .sink { completion in
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-          self.isUpdating = false
-          self.getProductsOnCart()
+        switch completion {
+        case .finished:
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isUpdating = false
+            self.getProductsOnCart()
+          }
+          self.errorMessage = ""
+          self.isShowError = false
+        case .failure(let error):
+          self.isShowError = true
+          self.errorMessage = error.localizedDescription
         }
       } receiveValue: { _ in }
       .store(in: &anyCancellable)

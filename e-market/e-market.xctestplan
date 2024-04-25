@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "9C997234-525A-4528-B49E-773D5B3E66FA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:e-market.xcodeproj",
+        "identifier" : "E6FDEDE82BD7BBE400D8CCEE",
+        "name" : "e-marketTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:e-market.xcodeproj",
+        "identifier" : "E6FDEDF22BD7BBE400D8CCEE",
+        "name" : "e-marketUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

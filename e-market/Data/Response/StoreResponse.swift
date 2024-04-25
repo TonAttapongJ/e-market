@@ -20,4 +20,11 @@ struct StoreResponse: Codable {
     self.openingTime = try container.decode(String.self, forKey: .openingTime)
     self.closingTime = try container.decode(String.self, forKey: .closingTime)
   }
+  
+  init(name: String, rating: Double, openingTime: String, closingTime: String) {
+    self.name = name
+    self.rating = rating
+    self.openingTime = openingTime
+    self.closingTime = closingTime
+  }
 }

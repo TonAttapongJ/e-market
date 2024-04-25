@@ -18,4 +18,10 @@ struct ProductResponse: Codable {
     self.price = try container.decode(Double.self, forKey: .price)
     self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
   }
+  
+  init(name: String, price: Double, imageUrl: String) {
+    self.name = name
+    self.price = price
+    self.imageUrl = imageUrl
+  }
 }

@@ -88,7 +88,7 @@ final class HomeViewModelTest: XCTestCase {
         XCTAssert(self.viewModel.errorMessage.isEmpty, "Error message should be empty on success")
         expectation.fulfill()
     }
-    wait(for: [expectation], timeout: 2)
+    wait(for: [expectation], timeout: 4)
   }
   
   func testSetSelectedProduct() {

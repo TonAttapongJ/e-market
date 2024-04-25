@@ -115,6 +115,14 @@ struct CartView: View {
                       secondaryButton: .cancel()
                     )
                   }
+                  
+                  .alert(isPresented: $viewModel.isShowError) {
+                    Alert(
+                      title: Text("Error occure"),
+                      message: Text("\(viewModel.errorMessage), Please try again later"),
+                      dismissButton: .default(Text("OK"))
+                    )
+                  }
                 }
               }.padding(16)
             }
