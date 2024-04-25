@@ -20,3 +20,12 @@ struct StoreModel {
     self.closingTime = closingTime
   }
 }
+
+extension StoreModel: Equatable {
+  static func == (lhs: StoreModel, rhs: StoreModel) -> Bool {
+    return lhs.name == rhs.name &&
+    lhs.rating == rhs.rating &&
+    lhs.openingTime == rhs.openingTime &&
+    lhs.closingTime == rhs.closingTime
+  }
+}

@@ -12,7 +12,7 @@ protocol CreateCartUseCase {
   func execute(product: ProductModel, quantity: Int) -> AnyPublisher<Void, Error>
 }
 
-class CreateCartuseCaseImpl: CreateCartUseCase {
+class CreateCartUseCaseImpl: CreateCartUseCase {
   let repository: CartRepository
   
   init(repository: CartRepository = CartRepositoryImpl()) {

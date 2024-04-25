@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
   @Published private(set) var errorMessage: String = ""
   @Published private(set) var badge: Int? = nil
   
-  private var selectedProduct: ProductModel?
+  private(set) var selectedProduct: ProductModel?
   private var anyCancellable = Set<AnyCancellable>()
 
   init(
@@ -47,7 +47,7 @@ class HomeViewModel: ObservableObject {
       }.store(in: &anyCancellable)
   }
   
-  private func getStoreInformation() {
+  func getStoreInformation() {
     self.viewState = .loading
     self.getStoreUseCase
       .execute()
@@ -60,16 +60,18 @@ class HomeViewModel: ObservableObject {
           .execute()
           .eraseToAnyPublisher()
       }
-      .sink(receiveCompletion: { completion in
+      .sink(receiveCompletion: { [weak self] completion in
           switch completion {
           case .failure(let error):
-            self.errorMessage = error.localizedDescription
+            self?.errorMessage = error.localizedDescription
+            self?.viewState = .failed
           case .finished:
               break
           }
       }, receiveValue: { [weak self] productModelsData in
         self?.productModels = productModelsData ?? []
         self?.viewState = (productModelsData?.count ?? 0) > 0 ? .success : .failed
+        self?.errorMessage = (productModelsData?.count ?? 0) > 0 ? "" : "No products available"
       })
       .store(in: &anyCancellable)
   }

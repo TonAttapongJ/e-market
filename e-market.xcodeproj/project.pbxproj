@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E64D22882BDA096800AEC122 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D22872BDA096800AEC122 /* HomeViewModelTest.swift */; };
+		E64D22962BDA0A2F00AEC122 /* MockReadCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D22952BDA0A2F00AEC122 /* MockReadCartUseCase.swift */; };
+		E64D22982BDA0A3900AEC122 /* MockGetProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D22972BDA0A3900AEC122 /* MockGetProductUseCase.swift */; };
+		E64D229A2BDA0A5500AEC122 /* MockGetStoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D22992BDA0A5500AEC122 /* MockGetStoreUseCase.swift */; };
+		E64D229C2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D229B2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift */; };
+		E64D229E2BDA1D9700AEC122 /* ReadCartUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D229D2BDA1D9700AEC122 /* ReadCartUseCaseTest.swift */; };
+		E64D22A02BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D229F2BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift */; };
+		E64D22A62BDA1E5100AEC122 /* MockCartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D22A52BDA1E5100AEC122 /* MockCartRepository.swift */; };
 		E67055CF2BD8B7CF000C1645 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67055CE2BD8B7CF000C1645 /* HomeView.swift */; };
 		E67055D12BD8B7DE000C1645 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67055D02BD8B7DE000C1645 /* HomeViewModel.swift */; };
 		E67055D82BD8B899000C1645 /* GetStoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67055D72BD8B899000C1645 /* GetStoreUseCase.swift */; };
@@ -76,6 +84,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E64D22872BDA096800AEC122 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		E64D22952BDA0A2F00AEC122 /* MockReadCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadCartUseCase.swift; sourceTree = "<group>"; };
+		E64D22972BDA0A3900AEC122 /* MockGetProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetProductUseCase.swift; sourceTree = "<group>"; };
+		E64D22992BDA0A5500AEC122 /* MockGetStoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetStoreUseCase.swift; sourceTree = "<group>"; };
+		E64D229B2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCartUseCaseTest.swift; sourceTree = "<group>"; };
+		E64D229D2BDA1D9700AEC122 /* ReadCartUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCartUseCaseTest.swift; sourceTree = "<group>"; };
+		E64D229F2BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCartUseCaseTest.swift; sourceTree = "<group>"; };
+		E64D22A52BDA1E5100AEC122 /* MockCartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCartRepository.swift; sourceTree = "<group>"; };
 		E67055CE2BD8B7CF000C1645 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E67055D02BD8B7DE000C1645 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E67055D72BD8B899000C1645 /* GetStoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStoreUseCase.swift; sourceTree = "<group>"; };
@@ -155,6 +171,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E64D22862BDA095300AEC122 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E64D228A2BDA09A400AEC122 /* Home */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E64D22892BDA098A00AEC122 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E64D229B2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift */,
+				E64D229D2BDA1D9700AEC122 /* ReadCartUseCaseTest.swift */,
+				E64D229F2BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E64D228A2BDA09A400AEC122 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E64D22872BDA096800AEC122 /* HomeViewModelTest.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E64D22942BDA0A2700AEC122 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E64D22A22BDA1E2400AEC122 /* Repository */,
+				E64D22A12BDA1E1E00AEC122 /* UseCase */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		E64D22A12BDA1E1E00AEC122 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E64D22952BDA0A2F00AEC122 /* MockReadCartUseCase.swift */,
+				E64D22972BDA0A3900AEC122 /* MockGetProductUseCase.swift */,
+				E64D22992BDA0A5500AEC122 /* MockGetStoreUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E64D22A22BDA1E2400AEC122 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E64D22A52BDA1E5100AEC122 /* MockCartRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		E67055C82BD8B77F000C1645 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +598,9 @@
 		E6FDEDEC2BD7BBE400D8CCEE /* e-marketTests */ = {
 			isa = PBXGroup;
 			children = (
+				E64D22942BDA0A2700AEC122 /* Mock */,
+				E64D22892BDA098A00AEC122 /* Domain */,
+				E64D22862BDA095300AEC122 /* Presentation */,
 				E6FDEDED2BD7BBE400D8CCEE /* e_marketTests.swift */,
 			);
 			path = "e-marketTests";
@@ -732,6 +804,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FDEDEE2BD7BBE400D8CCEE /* e_marketTests.swift in Sources */,
+				E64D229C2BDA1D5F00AEC122 /* CreateCartUseCaseTest.swift in Sources */,
+				E64D229A2BDA0A5500AEC122 /* MockGetStoreUseCase.swift in Sources */,
+				E64D22962BDA0A2F00AEC122 /* MockReadCartUseCase.swift in Sources */,
+				E64D22A02BDA1DCD00AEC122 /* UpdateCartUseCaseTest.swift in Sources */,
+				E64D22A62BDA1E5100AEC122 /* MockCartRepository.swift in Sources */,
+				E64D229E2BDA1D9700AEC122 /* ReadCartUseCaseTest.swift in Sources */,
+				E64D22982BDA0A3900AEC122 /* MockGetProductUseCase.swift in Sources */,
+				E64D22882BDA096800AEC122 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

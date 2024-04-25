@@ -22,3 +22,11 @@ struct ProductModel {
     self.quantity = quantity
   }
 }
+
+extension ProductModel: Equatable {
+  static func == (lhs: ProductModel, rhs: ProductModel) -> Bool {
+    return lhs.name == rhs.name &&
+    lhs.price == rhs.price &&
+    lhs.imageUrl == rhs.imageUrl
+  }
+}

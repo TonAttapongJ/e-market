@@ -17,7 +17,7 @@ class AddToCartViewModel: ObservableObject {
 
   init(
     productModel: ProductModel,
-    createCartUseCase: CreateCartUseCase = CreateCartuseCaseImpl()
+    createCartUseCase: CreateCartUseCase = CreateCartUseCaseImpl()
   ) {
     self.productModel = productModel
     self.createCartUseCase = createCartUseCase
