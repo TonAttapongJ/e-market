@@ -56,13 +56,13 @@ class SQLiteCommands {
       return nil
     }
     
-    let contact = table.filter(id == productValues.id).limit(1)
+    let product = table.filter(id == productValues.id).limit(1)
     
     do {
-      if try database.run(contact.update(name <- productValues.name, price <- productValues.price, quantity <- productValues.quantity, imageUrl <- productValues.imageUrl)) > 0 {
+      if try database.run(product.update(name <- productValues.name, price <- productValues.price, quantity <- productValues.quantity, imageUrl <- productValues.imageUrl)) > 0 {
         return true
       } else {
-        print("Could not update contact: contact not found")
+        print("Could not update product: product not found")
         return false
       }
     } catch {
@@ -108,12 +108,31 @@ class SQLiteCommands {
     }
     
     do {
-      let contact = table.filter(id == productId).limit(1)
-      try database.run(contact.delete())
+      let product = table.filter(id == productId).limit(1)
+      try database.run(product.delete())
       return true
     } catch {
       print("Delete row error: \(error)")
       return false
     }
   }
+  
+  static func deleteAll(productArray: [ProductModel]) -> Bool? {
+    guard let database = SQLiteDatabase.sharedInstance.database else {
+      print("Datastore connection error")
+      return nil
+    }
+    
+    do {
+      for product in productArray {
+        let product = table.filter(id == product.id).limit(1)
+        try database.run(product.delete())
+      }
+      return true
+    } catch {
+      print("Delete row error: \(error)")
+      return false
+    }
+  }
+
 }

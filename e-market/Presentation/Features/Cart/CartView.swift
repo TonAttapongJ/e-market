@@ -22,8 +22,8 @@ struct CartView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack(alignment: .center) {
-
-        VStack(alignment: .leading) {
+        
+        VStack {
           switch viewModel.viewState {
           case .start:
             EmptyView()
@@ -95,6 +95,15 @@ struct CartView: View {
                       }
                     }
                   }
+                  
+                  .alert(isPresented: $viewModel.isShowError) {
+                    Alert(
+                      title: Text("Error occure"),
+                      message: Text("\(viewModel.errorMessage), Please try again later"),
+                      dismissButton: .default(Text("OK"))
+                    )
+                  }
+                  
                   .alert(isPresented: $showingConfirmation) {
                     Alert(
                       title: Text("Confirmation"),
@@ -105,19 +114,16 @@ struct CartView: View {
                       secondaryButton: .cancel()
                     )
                   }
-                  
-                  .alert(isPresented: $viewModel.isShowError) {
-                    Alert(
-                      title: Text("Error occure"),
-                      message: Text("\(viewModel.errorMessage), Please try again later"),
-                      dismissButton: .default(Text("OK"))
-                    )
-                  }
                 }
               }.padding(16)
             }
           case .failed:
-            Text("There is no product")
+            VStack(alignment: .center) {
+              Spacer()
+              Text("There is no product")
+                .frame(maxWidth: .infinity, alignment: .center)
+              Spacer()
+            }
           }
         }
         .navigationTitle("Cart")
@@ -146,7 +152,7 @@ struct CartView: View {
           .frame(minWidth: 0, maxWidth: .infinity, alignment: .bottom)
           .padding()
         }
-
+        
         VStack {
           ProgressView("Loading...")
             .progressViewStyle(CircularProgressViewStyle())
@@ -157,8 +163,8 @@ struct CartView: View {
         .foregroundColor(Color.primary)
         .cornerRadius(20)
         .opacity(self.viewModel.isUpdating ? 1 : 0)
-
-        }
+        
+      }
     }
   }
 }

@@ -11,6 +11,7 @@ enum RouterDestination {
   case home(viewModel: HomeViewModel)
   case cartView(viewModel: CartViewModel)
   case orderSummaryView(viewModel: OrderSummaryViewModel)
+  case orderSuccess
 }
 
 extension RouterDestination: Equatable {
@@ -19,6 +20,7 @@ extension RouterDestination: Equatable {
     case (.home, .home): return true
     case (.cartView, .cartView): return true
     case (.orderSummaryView, .orderSummaryView): return true
+    case (.orderSuccess, .orderSuccess): return true
     default: return false
     }
   }
@@ -30,6 +32,7 @@ extension RouterDestination: Hashable {
     case .home: hasher.combine(0)
     case .cartView: hasher.combine(1)
     case .orderSummaryView: hasher.combine(2)
+    case .orderSuccess: hasher.combine(3)
     }
   }
 }
@@ -50,6 +53,8 @@ class RouterFactoryView: RouterFactory {
       CartView(viewModel: viewModel)
     case .orderSummaryView(let viewModel):
       OrderSummaryView(viewModel: viewModel)
+    case .orderSuccess:
+      OrderSuccessView()
     }
   }
 }

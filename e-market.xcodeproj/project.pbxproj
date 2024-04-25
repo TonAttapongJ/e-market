@@ -76,8 +76,9 @@
 		E6A534742BDA792F00E9DD1E /* MockPostOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534732BDA792F00E9DD1E /* MockPostOrderUseCase.swift */; };
 		E6A534762BDA79C800E9DD1E /* PostOrderUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534752BDA79C800E9DD1E /* PostOrderUseCaseTest.swift */; };
 		E6A534782BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534772BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift */; };
+		E6A5347B2BDA900300E9DD1E /* OrderSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5347A2BDA900300E9DD1E /* OrderSuccessView.swift */; };
+		E6A5347F2BDA936300E9DD1E /* DeleteCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5347E2BDA936300E9DD1E /* DeleteCartUseCase.swift */; };
 		E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */; };
-		E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */; };
 		E6FDEDE12BD7BBE400D8CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */; };
 		E6FDEDE42BD7BBE400D8CCEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE32BD7BBE400D8CCEE /* Preview Assets.xcassets */; };
 		E6FDEDEE2BD7BBE400D8CCEE /* e_marketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDED2BD7BBE400D8CCEE /* e_marketTests.swift */; };
@@ -167,9 +168,10 @@
 		E6A534732BDA792F00E9DD1E /* MockPostOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostOrderUseCase.swift; sourceTree = "<group>"; };
 		E6A534752BDA79C800E9DD1E /* PostOrderUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOrderUseCaseTest.swift; sourceTree = "<group>"; };
 		E6A534772BDA7B9300E9DD1E /* OrderSummaryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewModelTest.swift; sourceTree = "<group>"; };
+		E6A5347A2BDA900300E9DD1E /* OrderSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessView.swift; sourceTree = "<group>"; };
+		E6A5347E2BDA936300E9DD1E /* DeleteCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCartUseCase.swift; sourceTree = "<group>"; };
 		E6FDEDD92BD7BBE200D8CCEE /* e-market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_marketApp.swift; sourceTree = "<group>"; };
-		E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6FDEDE32BD7BBE400D8CCEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6FDEDE92BD7BBE400D8CCEE /* e-marketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-marketTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +312,7 @@
 		E67055CC2BD8B79E000C1645 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E6A534792BDA8FF000E9DD1E /* OrderSuccess */,
 				E6A534442BDA4A0700E9DD1E /* OrderSummary */,
 				E670563F2BD900CE000C1645 /* Cart */,
 				E670562C2BD8EB10000C1645 /* AddToCart */,
@@ -368,6 +371,7 @@
 				E670563D2BD8FCF8000C1645 /* CreateCartUseCase.swift */,
 				E67056462BD90296000C1645 /* ReadCartUseCase.swift */,
 				E67056562BD93F5E000C1645 /* UpdateCartUseCase.swift */,
+				E6A5347E2BDA936300E9DD1E /* DeleteCartUseCase.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -642,6 +646,14 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
+		E6A534792BDA8FF000E9DD1E /* OrderSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5347A2BDA900300E9DD1E /* OrderSuccessView.swift */,
+			);
+			path = OrderSuccess;
+			sourceTree = "<group>";
+		};
 		E6FDEDD02BD7BBE200D8CCEE = {
 			isa = PBXGroup;
 			children = (
@@ -670,7 +682,6 @@
 				E67055C92BD8B789000C1645 /* Domain */,
 				E67055C82BD8B77F000C1645 /* Core */,
 				E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */,
-				E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */,
 				E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */,
 				E6FDEDE22BD7BBE400D8CCEE /* Preview Content */,
 			);
@@ -852,15 +863,16 @@
 				E670563C2BD8FAC5000C1645 /* CartRepositoryImpl.swift in Sources */,
 				E670560F2BD8C2F0000C1645 /* LinkedList.swift in Sources */,
 				E67055CF2BD8B7CF000C1645 /* HomeView.swift in Sources */,
+				E6A5347B2BDA900300E9DD1E /* OrderSuccessView.swift in Sources */,
 				E6A534462BDA4A2400E9DD1E /* OrderSummaryView.swift in Sources */,
 				E6A534482BDA4A2E00E9DD1E /* OrderSummaryViewModel.swift in Sources */,
 				E67056052BD8C014000C1645 /* NetworkError.swift in Sources */,
 				E67056552BD91E09000C1645 /* SQLiteCommands.swift in Sources */,
 				E67056072BD8C1FB000C1645 /* ViewState.swift in Sources */,
-				E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */,
 				E67055F02BD8BCA1000C1645 /* NetworkManager.swift in Sources */,
 				E67055F32BD8BD81000C1645 /* NetworkPlugin.swift in Sources */,
 				E670560D2BD8C2E8000C1645 /* RouterDestination.swift in Sources */,
+				E6A5347F2BDA936300E9DD1E /* DeleteCartUseCase.swift in Sources */,
 				E67056032BD8BE82000C1645 /* CoreConstants.swift in Sources */,
 				E67055E82BD8BB38000C1645 /* StoreResponse.swift in Sources */,
 				E6A5346E2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift in Sources */,
@@ -1083,6 +1095,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1110,6 +1123,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
