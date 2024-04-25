@@ -67,6 +67,11 @@
 		E6A534432BDA3E5D00E9DD1E /* GetStoreUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534422BDA3E5D00E9DD1E /* GetStoreUseCaseTest.swift */; };
 		E6A534462BDA4A2400E9DD1E /* OrderSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534452BDA4A2400E9DD1E /* OrderSummaryView.swift */; };
 		E6A534482BDA4A2E00E9DD1E /* OrderSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534472BDA4A2E00E9DD1E /* OrderSummaryViewModel.swift */; };
+		E6A534652BDA6C4200E9DD1E /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534642BDA6C4200E9DD1E /* OrderRequest.swift */; };
+		E6A534682BDA6C9200E9DD1E /* OrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A534672BDA6C9200E9DD1E /* OrderAPI.swift */; };
+		E6A5346B2BDA6E4100E9DD1E /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346A2BDA6E4100E9DD1E /* OrderRepository.swift */; };
+		E6A5346E2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346D2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift */; };
+		E6A534702BDA6F8200E9DD1E /* OrderPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5346F2BDA6F8200E9DD1E /* OrderPostUseCase.swift */; };
 		E6FDEDDD2BD7BBE200D8CCEE /* e_marketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */; };
 		E6FDEDDF2BD7BBE200D8CCEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */; };
 		E6FDEDE12BD7BBE400D8CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEDE02BD7BBE400D8CCEE /* Assets.xcassets */; };
@@ -149,6 +154,11 @@
 		E6A534422BDA3E5D00E9DD1E /* GetStoreUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStoreUseCaseTest.swift; sourceTree = "<group>"; };
 		E6A534452BDA4A2400E9DD1E /* OrderSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryView.swift; sourceTree = "<group>"; };
 		E6A534472BDA4A2E00E9DD1E /* OrderSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewModel.swift; sourceTree = "<group>"; };
+		E6A534642BDA6C4200E9DD1E /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
+		E6A534672BDA6C9200E9DD1E /* OrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPI.swift; sourceTree = "<group>"; };
+		E6A5346A2BDA6E4100E9DD1E /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
+		E6A5346D2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepositoryImpl.swift; sourceTree = "<group>"; };
+		E6A5346F2BDA6F8200E9DD1E /* OrderPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPostUseCase.swift; sourceTree = "<group>"; };
 		E6FDEDD92BD7BBE200D8CCEE /* e-market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDEDDC2BD7BBE200D8CCEE /* e_marketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_marketApp.swift; sourceTree = "<group>"; };
 		E6FDEDDE2BD7BBE200D8CCEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -277,6 +287,7 @@
 		E67055CB2BD8B796000C1645 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E6A534632BDA6C2D00E9DD1E /* Request */,
 				E67055E62BD8BAF2000C1645 /* Response */,
 				E67055DE2BD8B9DA000C1645 /* RepositoryImpl */,
 				E67055DD2BD8B9CE000C1645 /* DataSource */,
@@ -334,6 +345,7 @@
 		E67055D52BD8B851000C1645 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				E6A5346F2BDA6F8200E9DD1E /* OrderPostUseCase.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -377,6 +389,7 @@
 		E67055DE2BD8B9DA000C1645 /* RepositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
+				E6A5346C2BDA6E6B00E9DD1E /* Order */,
 				E670563A2BD8FAB7000C1645 /* Cart */,
 				E67056182BD8C71E000C1645 /* Product */,
 				E67055E92BD8BBAD000C1645 /* Store */,
@@ -387,6 +400,7 @@
 		E67055E22BD8BA4F000C1645 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E6A534692BDA6E3500E9DD1E /* Order */,
 				E67056372BD8FA45000C1645 /* Cart */,
 				E67056102BD8C662000C1645 /* Product */,
 				E67055E32BD8BA63000C1645 /* Store */,
@@ -450,6 +464,7 @@
 		E67055F42BD8BDA5000C1645 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E6A534662BDA6C8A00E9DD1E /* Order */,
 				E670561D2BD8C76D000C1645 /* Product */,
 				E67055F52BD8BDAE000C1645 /* Store */,
 			);
@@ -581,6 +596,38 @@
 				E6A534472BDA4A2E00E9DD1E /* OrderSummaryViewModel.swift */,
 			);
 			path = OrderSummary;
+			sourceTree = "<group>";
+		};
+		E6A534632BDA6C2D00E9DD1E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E6A534642BDA6C4200E9DD1E /* OrderRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E6A534662BDA6C8A00E9DD1E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E6A534672BDA6C9200E9DD1E /* OrderAPI.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		E6A534692BDA6E3500E9DD1E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5346A2BDA6E4100E9DD1E /* OrderRepository.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		E6A5346C2BDA6E6B00E9DD1E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5346D2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		E6FDEDD02BD7BBE200D8CCEE = {
@@ -804,12 +851,17 @@
 				E670560D2BD8C2E8000C1645 /* RouterDestination.swift in Sources */,
 				E67056032BD8BE82000C1645 /* CoreConstants.swift in Sources */,
 				E67055E82BD8BB38000C1645 /* StoreResponse.swift in Sources */,
+				E6A5346E2BDA6E7500E9DD1E /* OrderRepositoryImpl.swift in Sources */,
 				E670560B2BD8C2E0000C1645 /* Router.swift in Sources */,
+				E6A534682BDA6C9200E9DD1E /* OrderAPI.swift in Sources */,
 				E67056302BD8EC20000C1645 /* AddToCartViewModel.swift in Sources */,
+				E6A5346B2BDA6E4100E9DD1E /* OrderRepository.swift in Sources */,
 				E670563E2BD8FCF8000C1645 /* CreateCartUseCase.swift in Sources */,
+				E6A534702BDA6F8200E9DD1E /* OrderPostUseCase.swift in Sources */,
 				E670561A2BD8C72A000C1645 /* ProductRepositoryImpl.swift in Sources */,
 				E67056442BD900E7000C1645 /* CartViewModel.swift in Sources */,
 				E67055D82BD8B899000C1645 /* GetStoreUseCase.swift in Sources */,
+				E6A534652BDA6C4200E9DD1E /* OrderRequest.swift in Sources */,
 				E67055EB2BD8BBBB000C1645 /* StoreRepositoryImpl.swift in Sources */,
 				E67056282BD8CC36000C1645 /* ProductCardViewModel.swift in Sources */,
 				E67056222BD8CAD6000C1645 /* DateFormatter.swift in Sources */,

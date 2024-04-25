@@ -22,16 +22,6 @@ struct CartView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack(alignment: .center) {
-        VStack {
-          ProgressView("Loading...")
-            .progressViewStyle(CircularProgressViewStyle())
-        }
-        .frame(width: geometry.size.width / 3,
-               height: geometry.size.height / 6)
-        .background(Color.secondary.colorInvert())
-        .foregroundColor(Color.primary)
-        .cornerRadius(20)
-        .opacity(self.viewModel.isUpdating ? 1 : 0)
 
         VStack(alignment: .leading) {
           switch viewModel.viewState {
@@ -156,6 +146,17 @@ struct CartView: View {
           .frame(minWidth: 0, maxWidth: .infinity, alignment: .bottom)
           .padding()
         }
+
+        VStack {
+          ProgressView("Loading...")
+            .progressViewStyle(CircularProgressViewStyle())
+        }
+        .frame(width: geometry.size.width / 3,
+               height: geometry.size.height / 6)
+        .background(Color.secondary.colorInvert())
+        .foregroundColor(Color.primary)
+        .cornerRadius(20)
+        .opacity(self.viewModel.isUpdating ? 1 : 0)
 
         }
     }

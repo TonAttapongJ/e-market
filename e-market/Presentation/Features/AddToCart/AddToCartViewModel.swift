@@ -39,6 +39,5 @@ class AddToCartViewModel: ObservableObject {
           }
       }, receiveValue: { _ in })
       .store(in: &anyCancellable)
-
   }
 }

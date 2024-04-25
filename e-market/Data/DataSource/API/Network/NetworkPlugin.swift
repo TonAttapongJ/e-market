@@ -19,7 +19,7 @@ public struct NetworkPlugin: PluginType {
   }
   
   public func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-//    debugPrint("NetworkPlugin didReceive result: \(result)")
+    debugPrint("NetworkPlugin didReceive result: \(result)")
 //    debugPrint("NetworkPlugin didReceive target: \(target)")
   }
   

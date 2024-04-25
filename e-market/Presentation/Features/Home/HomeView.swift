@@ -43,11 +43,9 @@ struct HomeView: View {
               .frame(maxWidth: .infinity)
             
             Button {
-              //TODO: Implement Go to Cart
               router.navigate(to: .cartView(viewModel: CartViewModel()))
             } label: {
               ZStack {
-                //TODO: Implement Badge
                 Image(systemName: "cart")
                   .foregroundColor(.black)
                   .padding(.bottom, 2)
