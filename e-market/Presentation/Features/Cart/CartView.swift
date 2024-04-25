@@ -22,8 +22,8 @@ struct CartView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack(alignment: .center) {
-
-        VStack(alignment: .leading) {
+        
+        VStack {
           switch viewModel.viewState {
           case .start:
             EmptyView()
@@ -54,6 +54,7 @@ struct CartView: View {
                         Button {
                           if (item.quantity - 1) == 0 {
                             showingConfirmation = true
+                            viewModel.selectedProductToDelete = item
                           } else {
                             viewModel.updateProduct(product: item, quantity: item.quantity - 1)
                           }
@@ -95,16 +96,6 @@ struct CartView: View {
                       }
                     }
                   }
-                  .alert(isPresented: $showingConfirmation) {
-                    Alert(
-                      title: Text("Confirmation"),
-                      message: Text("Are you sure you want to remove this item?"),
-                      primaryButton: .destructive(Text("Remove")) {
-                        viewModel.updateProduct(product: item, quantity: 0)
-                      },
-                      secondaryButton: .cancel()
-                    )
-                  }
                   
                   .alert(isPresented: $viewModel.isShowError) {
                     Alert(
@@ -113,11 +104,28 @@ struct CartView: View {
                       dismissButton: .default(Text("OK"))
                     )
                   }
+                  
+                  .alert(isPresented: $showingConfirmation) {
+                    Alert(
+                      title: Text("Confirmation"),
+                      message: Text("Are you sure you want to remove this item?"),
+                      primaryButton: .destructive(Text("Remove")) {
+                        guard let product = viewModel.selectedProductToDelete else { return }
+                        viewModel.updateProduct(product: product, quantity: 0)
+                      },
+                      secondaryButton: .cancel()
+                    )
+                  }
                 }
               }.padding(16)
             }
           case .failed:
-            Text("There is no product")
+            VStack(alignment: .center) {
+              Spacer()
+              Text("There is no product")
+                .frame(maxWidth: .infinity, alignment: .center)
+              Spacer()
+            }
           }
         }
         .navigationTitle("Cart")
@@ -146,7 +154,7 @@ struct CartView: View {
           .frame(minWidth: 0, maxWidth: .infinity, alignment: .bottom)
           .padding()
         }
-
+        
         VStack {
           ProgressView("Loading...")
             .progressViewStyle(CircularProgressViewStyle())
@@ -157,8 +165,8 @@ struct CartView: View {
         .foregroundColor(Color.primary)
         .cornerRadius(20)
         .opacity(self.viewModel.isUpdating ? 1 : 0)
-
-        }
+        
+      }
     }
   }
 }

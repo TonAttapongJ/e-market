@@ -65,14 +65,24 @@ class CartRepositoryImpl: CartRepository {
   }
   
   func delete(product: ProductModel) -> AnyPublisher<Void, any Error> {
-    let productDeleteToTable = SQLiteCommands.deleteRow(productId: product.id)
-    if productDeleteToTable == true {
+    let productDeleteFromTable = SQLiteCommands.deleteRow(productId: product.id)
+    if productDeleteFromTable == true {
       return Empty<Void, Error>().eraseToAnyPublisher()
     } else {
       return dbError(message: "Could not delete from DB").eraseToAnyPublisher()
     }
   }
   
+  func deleteAll() -> AnyPublisher<Void, any Error> {
+    let productArray = SQLiteCommands.presentRows() ?? []
+    let productDeleteFromTable = SQLiteCommands.deleteAll(productArray: productArray)
+    if productDeleteFromTable == true {
+      return Empty<Void, Error>().eraseToAnyPublisher()
+    } else {
+      return dbError(message: "Could not delete from DB").eraseToAnyPublisher()
+    }
+  }
+
   func dbError(message: String) -> Fail<Void, Error> {
     let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: message])
     return Fail<Void, Error>(error: error)

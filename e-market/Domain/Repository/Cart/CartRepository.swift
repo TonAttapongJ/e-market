@@ -13,4 +13,5 @@ protocol CartRepository {
   func read() -> AnyPublisher<[ProductModel], Error>
   func update(product: ProductModel, quantity: Int) -> AnyPublisher<Void, Error>
   func delete(product: ProductModel) -> AnyPublisher<Void, Error>
+  func deleteAll() -> AnyPublisher<Void, Error>
 }

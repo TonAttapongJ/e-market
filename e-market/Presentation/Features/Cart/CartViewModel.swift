@@ -14,6 +14,7 @@ class CartViewModel: ObservableObject {
   @Published var isUpdating: Bool = false
   @Published var errorMessage: String = ""
   @Published var isShowError: Bool = false
+  @Published var selectedProductToDelete: ProductModel?
 
   private let readCartUseCase: ReadCartUseCase
   private let updateCartUseCase: UpdateCartUseCase

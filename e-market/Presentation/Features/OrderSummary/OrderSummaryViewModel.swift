@@ -17,20 +17,41 @@ class OrderSummaryViewModel: ObservableObject {
   @Published var isNavigateToSuccessScreen = false
 
   let orderPostUseCase: OrderPostUseCase
+  let deleteCartUseCase: DeleteCartUseCase
   private var anyCancellable = Set<AnyCancellable>()
 
   init(
     productModels: [ProductModel],
-    orderPostUseCase: OrderPostUseCase = OrderPostUseCaseImpl()
+    orderPostUseCase: OrderPostUseCase = OrderPostUseCaseImpl(),
+    deleteCartUseCase: DeleteCartUseCase = DeleteCartUseCaseImpl()
   ) {
     self.orderPostUseCase = orderPostUseCase
     self.productModels = productModels
+    self.deleteCartUseCase = deleteCartUseCase
   }
   
   func confirmOrder() {
     self.isLoading = true
     orderPostUseCase
       .execute(products: productModels, address: addressText)
+      .subscribe(on: DispatchQueue.global(qos: .background))
+      .receive(on: DispatchQueue.main)
+      .sink { completion in
+        switch completion {
+        case .finished:
+          self.deleteCart()
+        case .failure(let error):
+          self.isLoading = false
+          self.isShowError = true
+          self.errorMessage = error.localizedDescription
+        }
+      } receiveValue: { _ in }
+      .store(in: &anyCancellable)
+  }
+  
+  func deleteCart() {
+    deleteCartUseCase
+      .execute()
       .subscribe(on: DispatchQueue.global(qos: .background))
       .receive(on: DispatchQueue.main)
       .sink { completion in

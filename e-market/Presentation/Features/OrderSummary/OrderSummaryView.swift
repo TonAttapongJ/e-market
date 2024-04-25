@@ -149,9 +149,7 @@ struct OrderSummaryView: View {
       }
       .onChange(of: viewModel.isNavigateToSuccessScreen, { oldValue, newValue in
         if newValue {
-          print("POST SUCESSFULLY, GREAT WORK!")
-          //TODO: navigate to success screen
-          //router.navigate(to: )
+          router.navigate(to: .orderSuccess)
         }
       })
       .onTapGesture {
